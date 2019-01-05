@@ -79,6 +79,16 @@ $router->group(['prefix' => '/v1/api'], function ($app) {
         return response(["message"=>"Enviado com sucesso","saved"=>$element],201);
     });
 
+    /**
+ * @OA\GET(
+ *   path="/v1/api/marketing",
+ *   summary="Verifica os emails marketings enviados",
+ *   @OA\Response(
+ *     response=200,
+ *     description="Confirmação de envio de email marketing",
+ *   )
+ * )
+ */
     $app->get('/marketing', function (Request $request)  {
         $faker = Faker\Factory::create();
 
